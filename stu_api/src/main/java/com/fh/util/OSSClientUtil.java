@@ -28,7 +28,7 @@ public class OSSClientUtil {
 
     public static final Logger logger = LoggerFactory.getLogger(OSSClientUtil.class);
 
-
+/////////////
     private String endpoint = "https://oss-cn-beijing.aliyuncs.com";
     /**
      * accessKey
