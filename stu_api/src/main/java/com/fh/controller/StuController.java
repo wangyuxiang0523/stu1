@@ -47,6 +47,7 @@ public class StuController {
     @GetMapping("getStuById")
     public Map<String,Object> queryDrugById(Integer id){
         Map<String,Object>map=new HashMap<>();
+//
 
         Stu stu=stuService.queryStuById(id);
 
