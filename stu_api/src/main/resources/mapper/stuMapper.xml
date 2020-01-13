@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fh.dao.StuDao">
+ <select id="queryStuCount" resultType="long">
+     select count(id) from w_stu
+ </select>
+    <select id="queryStuList" resultType="com.fh.model.Stu" parameterType="com.fh.model.PageBean">
+         select * from w_stu where isDel=1
+         order by id desc
+         limit #{start},#{length}
+    </select>
+    <update id="updateIsDel" parameterType="Integer">
+        update w_stu set isDel =2 where id =#{id}
+    </update>
+</mapper>
