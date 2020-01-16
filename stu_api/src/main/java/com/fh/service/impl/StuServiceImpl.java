@@ -49,4 +49,9 @@ public class StuServiceImpl implements StuService {
     public void deleteStu(Integer id) {
         stuDao.updateIsDel(id);
     }
+
+    @Override
+    public List<Stu> queryExcelList() {
+        return stuDao.selectList(null);
+    }
 }

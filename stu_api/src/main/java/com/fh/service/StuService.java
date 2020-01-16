@@ -4,6 +4,7 @@ import com.fh.model.PageBean;
 import com.fh.model.Stu;
 
 import java.net.UnknownHostException;
+import java.util.List;
 
 public interface StuService {
     PageBean<Stu> queryStuList(PageBean<Stu> pageBean);
@@ -15,4 +16,6 @@ public interface StuService {
     void saveStu(Stu stu) throws UnknownHostException;
 
     void deleteStu(Integer id);
+
+    List<Stu> queryExcelList();
 }

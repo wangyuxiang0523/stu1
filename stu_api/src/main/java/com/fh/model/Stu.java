@@ -5,21 +5,28 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fh.annotation.ExcelAnnotation;
+import com.fh.annotation.Export;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 @TableName("w_stu")
+@ExcelAnnotation(title = "用户信息",sheetName = "用户信息",mkdir = "user")
+@Export(title = "Stu")
 public class Stu {
     @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
-
+    @Export(name = "名字")
+    @ExcelAnnotation(columnName = "名字")
     private String name;
-
+    @Export(name = "年龄")
+    @ExcelAnnotation(columnName = "年龄")
     private Integer age;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern ="yyyy-MM-dd HH:mm:ss")
     private Date birthday;
-
+    @Export(name = "ip")
+    @ExcelAnnotation(columnName = "ip")
     private String ip;
     @TableField(value = "isDel")
     private Integer isDel;

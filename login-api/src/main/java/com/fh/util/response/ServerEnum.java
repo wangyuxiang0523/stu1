@@ -1,6 +1,6 @@
-package com.fh.util;
+package com.fh.util.response;
 
-public enum ServerEnum {
+public enum  ServerEnum {
      SUCCESS(200,"成功")
     ,ERROR(500,"失败")
     ,PHONE_NULL(6000,"手机号为空")
@@ -16,11 +16,10 @@ public enum ServerEnum {
     ,CARS_ORDER_NULL(5009,"订单为空，重新加入")
     ,NO_ORDER_PAY(5007,"没有要支付的订单")
     ,VIP_LOGIN_ING(5600,"用户已在其他地方登录")
-    ,EXPORT_NULL(7001,"导出数据是空的")
     ;
     private  Integer code;
     private  String  message;
-    private ServerEnum(Integer code, String message){
+    private ServerEnum(Integer code,String message){
         this.code=code;
         this.message=message;
     }
